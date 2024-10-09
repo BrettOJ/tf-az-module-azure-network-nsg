@@ -31,7 +31,7 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "nsg_naming_convention_info" {
+variable "naming_convention_info" {
   description = "A map containing the naming convention information"
   type        = map(object({
     name = string
