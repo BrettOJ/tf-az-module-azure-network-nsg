@@ -1,17 +1,13 @@
 locals {
-
   naming_convention_info = {
-    name         = "name"
-    project_code = "project_code"
-    env          = "env"
-    zone         = "zone"
-    tier         = "tier"
+    name = "name"
+    site = "d"
+    env  = "env"
+    app  = "zone"
   }
-
   tags = {
     environment = "Production"
   }
-
 }
 
 module "resource_groups" {
@@ -32,7 +28,7 @@ module "nsg" {
   location               = var.location
   resource_group_name    = module.resource_groups.rg_output[1].name
   naming_convention_info = local.naming_convention_info
-  
+
   security_rules = [
     {
       name                       = "allow_ssh"

@@ -4,7 +4,7 @@ resource "azurerm_network_security_group" "nsg" {
   name                = module.nsg_name.naming_convention_output[var.naming_convention_info.name].names.0
   location            = var.location
   resource_group_name = var.resource_group_name
-  tags = var.tags
+  tags                = var.tags
 
   dynamic "security_rule" {
     for_each = var.security_rules != null ? var.security_rules : []

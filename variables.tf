@@ -33,12 +33,11 @@ variable "tags" {
 
 variable "naming_convention_info" {
   description = "A map containing the naming convention information"
-  type        = map(object({
+  type = map(object({
     name = string
-    project_code = string
-    env = string
-    zone = string
-    tier = string
+    site = string
+    env  = string
+    app  = string
   }))
-  
+
 }
